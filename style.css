@@ -1,0 +1,231 @@
+/* Paleta de colores y variables CSS */
+:root {
+    --color-primario: #d9534f; /* Rojo volcánico */
+    --color-secundario: #5bc0de; /* Azul para detalles */
+    --color-fondo: #f0f4f7;
+    --color-texto: #333;
+    --color-card-bg: #ffffff;
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --sombra-hover: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f0f0f0; /* Cambiado a un color claro para que el texto sea legible sobre el fondo oscuro */
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)),
+        url(img/WhatsApp%20Image%202025-08-27%20at%2014.51.12.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Ajustes para las secciones y el header para que se vean bien sobre el fondo */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente para las secciones */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    color: #333; /* Cambiado el color del texto de la sección a uno oscuro para que contraste con el fondo de la sección */
+}
+
+/* Asegúrate de que los colores de los títulos y otros elementos también contrasten */
+h1, h2, h3 {
+    color: #ffffff; /* Un color de acento para los títulos */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(135deg, var(--color-primario), #b53d3d);
+    color: white;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: var(--color-card-bg);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.intro .text-content {
+    flex: 1;
+}
+
+.intro .video-content {
+    flex: 1;
+    /* Las siguientes reglas ayudan a mantener la relación de aspecto y el ajuste */
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9, común para videos */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro .video-content video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el contenedor sin distorsionarse */
+}
+
+.features {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.feature-card {
+    background-color: var(--color-fondo);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex: 1 1 300px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: var(--color-secundario);
+}
+
+.interactive-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#showMoreBtn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#showMoreBtn:hover {
+    background-color: #c94646;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #d9534f;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+    .feature-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Animación de carga */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
